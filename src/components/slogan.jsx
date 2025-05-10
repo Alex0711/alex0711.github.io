@@ -5,7 +5,7 @@ const Slogan = () => {
 			className="bg-cover bg-center text-black flex-grow" 
 			style={{ backgroundImage: `url(${blueSpots})` }}
 		>
-			<h2>Be seen. Be chosen.</h2>
+			<h2 className="text-slogan font-bold">Be seen. Be chosen.</h2>
 		</section>
 	)
 }
