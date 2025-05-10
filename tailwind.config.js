@@ -15,12 +15,6 @@ module.exports = {
       },
       fontFamily: {
         jost: ["Jost", "sans-serif"],
-      },
-      fontSize: {
-        'title': '2.25rem',
-        'slogan': '4rem',
-        'subtitle': '1.5rem',
-        'body': '1rem',
       }
     },
   },
