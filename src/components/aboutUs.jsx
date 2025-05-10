@@ -1,7 +1,7 @@
 const AboutUs = () => {
 	return(
-		<section className="flex flex-col lg:flex-row">
-			<div className="h-screen w-full lg:w-1/2 flex flex-col justify-between p-4">
+		<section className="flex flex-col lg:flex-row justify-between h-[200vh] lg:h-screen">
+			<div className="h-1/2 lg:h-[100%] w-full lg:w-[45%] flex flex-col justify-between">
 				<div>
 					<h2 className="text-title">
 						About Us
@@ -25,7 +25,7 @@ const AboutUs = () => {
 					</p>
 				</div>
 			</div>
-			<div className="h-screen w-full lg:w-1/2">
+			<div className="h-1/2 lg:h-[100%] w-full lg:w-[45%]">
 				Insertar imagen en esta sección
 			</div>
 		</section>

@@ -17,3 +17,33 @@
   --color-secondary: #818cf8;
   --color-accent: #fbbf24; */
 }
+
+@layer components {
+  .text-title {
+    @apply text-[2.25rem] font-bold;
+  }
+}
+
+@layer components {
+  .text-slogan {
+    @apply text-[4rem] font-bold;
+  }
+}
+
+@layer components {
+  .text-subtitle {
+    @apply text-[1.5rem] font-bold;
+  }
+}
+
+@layer components {
+  .text-body {
+    @apply text-[1rem];
+  }
+}
+
+@layer base {
+  section {
+    @apply px-4 py-8;
+  }
+}

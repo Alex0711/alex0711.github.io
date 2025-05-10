@@ -15,8 +15,8 @@ const Header = () => {
 	}, [darkMode]);
 
 	return (
-		<header className="relative p-4 font-bold">
-			<h1 className="text-2xl">BrightPixel Studio</h1>
+		<header className="relative">
+			<h1 className="text-title">Visibility Theory</h1>
 			<button
 				onClick={() => setDarkMode(!darkMode)}
 				className="absolute right-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-gray-200 dark:bg-gray-700 hover:scale-110 transition"

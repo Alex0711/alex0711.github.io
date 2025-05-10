@@ -1,6 +1,7 @@
 import Header from 'components/header';
 import Slogan from 'components/slogan';
 import AboutUs from 'components/aboutUs';
+import Services from 'components/services/services';
 
 const HomePage = () => {
 	return (
@@ -10,6 +11,7 @@ const HomePage = () => {
 				<Slogan />
 			</div>
 			<AboutUs />
+			<Services />
 		</body>
 	);
 }
