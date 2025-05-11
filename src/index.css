@@ -22,21 +22,12 @@
   .text-title {
     @apply text-[2.25rem] font-bold;
   }
-}
-
-@layer components {
   .text-slogan {
     @apply text-[4rem] font-bold;
   }
-}
-
-@layer components {
   .text-subtitle {
     @apply text-[1.5rem] font-bold;
   }
-}
-
-@layer components {
   .text-body {
     @apply text-[1rem];
   }
@@ -44,6 +35,22 @@
 
 @layer base {
   section {
-    @apply px-4 py-8;
+    @apply px-4 py-8 lg:px-8;
+  }
+  body {
+    @apply bg-background dark:bg-gray-900 text-text text-body font-jost font-medium;
+  }
+  input {
+    @apply flex-1 px-3 py-2 border-t border-b border-r border-gray-300 rounded-r mb-6;
   }
 }
+
+.input-no-spinner::-webkit-inner-spin-button,
+.input-no-spinner::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.input-no-spinner {
+  -moz-appearance: textfield;
+}
+

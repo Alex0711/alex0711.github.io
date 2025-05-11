@@ -40,13 +40,13 @@ const Services = () => {
 		},
 	]
 	return(
-		<section className="h-screen">
+		<section className="min-h-screen">
 			<h2 className="text-title text-center">
 				Services
 			</h2>
 			<div className="flex flex-col lg:flex-row lg:justify-between lg:flex-wrap gap-y-8">
 				{services.map(service => (
-					<Service service={service} />
+					<Service service={service} key={service.name} />
 				))}
 			</div>
 		</section>
