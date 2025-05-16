@@ -3,11 +3,12 @@ name: Deploy Portfolio
 on:
   push:
     branches:
-      - staging  # o la rama que elijas como base
+      - staging # o la rama que elijas como base
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    environment: staging
 
     steps:
       - name: Checkout code
@@ -31,3 +32,4 @@ jobs:
         env:
           CI: false
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REACT_APP_SHEET_URL: ${{ secrets.REACT_APP_SHEET_URL }}
