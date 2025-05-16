@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import PostButton from "components/footer/postButton";
 import ErrorMessaje from "components/footer/errorMessaje";
-// import getIPData from "utils/getIP";
+import getIPData from "utils/getIP";
 import { useAlert } from "context/alertContext";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
@@ -20,10 +20,11 @@ const schema = yup
 
 const ContactForm = () => {
   const sheetUrl = process.env.REACT_APP_SHEET_URL;
+  console.log("sheetUrl: ", sheetUrl);
   const [enableButton, setEnableButton] = useState(true);
   const { setCurrentAlert } = useAlert();
 
-  // const ipData = getIPData();
+  const ipData = getIPData();
   const {
     register,
     handleSubmit,
@@ -35,9 +36,9 @@ const ContactForm = () => {
   });
   const onSubmit = (data) => {
     setEnableButton(false);
-    // data["ip"] = ipData.ip;
-    // data["country"] = ipData.country_name;
-    // data["city"] = ipData.city;
+    data["ip"] = ipData.ip;
+    data["country"] = ipData.country_name;
+    data["city"] = ipData.city;
     fetch(sheetUrl, {
       redirect: "follow",
       method: "POST",
