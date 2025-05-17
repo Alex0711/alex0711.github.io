@@ -5,7 +5,6 @@ import { useRef } from "react";
 const Service = ({ service }) => {
   const lineRef = useRef(null);
   const isInView = useInView(lineRef, { once: true, margin: "-50px" });
-  console.log("isInView: ", isInView);
   return (
     <div ref={lineRef} className="flex flex-col lg:w-[45%]">
       <div className="flex flex-col md:flex-row md:justify-between md:items-baseline">

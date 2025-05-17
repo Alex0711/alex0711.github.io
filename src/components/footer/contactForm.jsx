@@ -38,7 +38,6 @@ const ContactForm = () => {
     mode: "onChange",
   });
   const onSubmit = (data) => {
-    console.log(data);
     setEnableButton(false);
     // data["ip"] = ipData.ip;
     // data["country"] = ipData.country_name;
