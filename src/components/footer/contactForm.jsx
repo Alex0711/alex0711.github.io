@@ -84,6 +84,7 @@ const ContactForm = () => {
           onChange={(e) => {
             clearErrors();
           }}
+          className="text-black"
         />
       </div>
       {errors?.email && <ErrorMessaje message={errors.email.message} />}
@@ -94,7 +95,7 @@ const ContactForm = () => {
         <textarea
           id="message"
           name="message"
-          className="rounded mb-6"
+          className="rounded mb-6 text-black p-2"
           {...register("message")}
         ></textarea>
         <PostButton enableButton={enableButton} />

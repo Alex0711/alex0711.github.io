@@ -7,11 +7,13 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: 'var(--color-primary)',
-        secondary: 'var(--color-secondary)',
         background: 'var(--color-background)',
-        text: 'var(--color-text)',
-        accent: 'var(--color-accent)',
+        primary: 'var(--color-primary)',
+        white: 'var(--color-white)',
+        secondary: 'var(--color-secondary)',
+        details: 'var(--color-details)',
+        tertiary: 'var(--color-tertiary)',
+        quaternary: 'var(--color-quaternary)',
       },
       fontFamily: {
         jost: ["Jost", "sans-serif"],
@@ -20,4 +22,3 @@ module.exports = {
   },
   plugins: [],
 }
-

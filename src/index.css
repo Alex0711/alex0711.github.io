@@ -4,18 +4,20 @@
 
 :root {
   --color-background: #ead3e4;
-  --color-text: #191332;
-  /* --color-primary: #2563eb;
-  --color-secondary: #4f46e5;
-  --color-accent: #f59e0b; */
+  --color-primary: #3b2d74;
+  --color-white : #ffffff;
+  --color-secondary: #191332;
+  --color-details: #f5d60d;
+  --color-tertiary: #9f8bc2;
+  --color-quaternary: #3b2d74;
 }
 
 .dark {
   --color-background: #191332;
-  --color-text: #f3f4f6;
-  /* --color-primary: #3b82f6;
-  --color-secondary: #818cf8;
-  --color-accent: #fbbf24; */
+  --color-primary: #9f8bc2;
+  --color-secondary: #ead3e4;
+  --color-tertiary: #473e57;
+  --color-quaternary: #3b2d74;
 }
 
 @layer components {
@@ -38,7 +40,7 @@
     @apply px-4 py-8 lg:px-8;
   }
   body {
-    @apply bg-background dark:bg-gray-900 text-text text-body font-jost font-medium;
+    @apply bg-background text-white text-body font-jost font-medium;
   }
   input {
     @apply flex-1 px-3 py-2 border-t border-b border-r border-gray-300 rounded-r mb-6;

@@ -21,14 +21,13 @@ const PhoneNumberInput = ({ register }) => {
           }))
           .sort((a, b) => a.name.localeCompare(b.name));
         setCountries(filtered);
-		
+
         // Set default country to Argentina
         const argentina = filtered.find((country) => country.cca2 === "AR");
         if (argentina) {
           setSelectedCountry(argentina);
         }
       });
-
   }, []);
 
   useEffect(() => {
@@ -50,8 +49,8 @@ const PhoneNumberInput = ({ register }) => {
 
   return (
     <>
-      <label htmlFor="phone" >Phone</label>
-      <div className="flex relative" ref={dropdownRef}>
+      <label htmlFor="phone">Phone</label>
+      <div className="flex relative text-black" ref={dropdownRef}>
         {/* Country Selector Button */}
         <button
           type="button"
@@ -99,8 +98,8 @@ const PhoneNumberInput = ({ register }) => {
           className="input-no-spinner"
           placeholder="123456789"
           id="phone"
-		  name="phone"
-		  {...register("phone")}
+          name="phone"
+          {...register("phone")}
         />
       </div>
     </>
