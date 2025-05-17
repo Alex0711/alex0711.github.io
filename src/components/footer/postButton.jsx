@@ -6,7 +6,7 @@ export default function PostButton({ enableButton }) {
       disabled={!enableButton}
       type="submit"
       className={`bg-primary dark:bg-details text-background font-bold py-2 rounded w-full ${
-        enableButton ? "cursor-pointer hover:bg-blue-700" : "cursor-not-allowed"
+        enableButton ? "cursor-pointer" : "cursor-not-allowed"
       }`}
     >
       Send

@@ -1,40 +1,45 @@
-import { FaInstagram, FaEnvelope, FaWhatsapp  } from 'react-icons/fa';
-import { SiGmail } from 'react-icons/si';
+import { FaInstagram, FaEnvelope, FaWhatsapp } from "react-icons/fa";
+import { SiGmail } from "react-icons/si";
 
 const Brand = () => {
-	return(
-		<div className='flex-col w-full lg:w-[45%]'>
-			<h2 className="text-title">Visibility Theory</h2>
-			<p></p>
-			<h3 className="text-xl font-semibold mb-4">We’re here to help!</h3>
-    		<p className="mb-6">Feel free to reach out to us through any of these channels:</p>
-			<div className="">
-				<a
-					href="https://www.instagram.com/alejandrosenger"
-					target="_blank"
-					rel="noopener noreferrer"
-					aria-label="Instagram"
-					className="hover:text-pink-500 transition flex flex-row items-center gap-2"
-					>
-					<FaInstagram />instagram.com/visibility-theory
-				</a>
-				<a
-					href="mailto:alex.senger@hotmail.com"
-					aria-label="Correo"
-					className="hover:text-red-400 transition flex flex-row items-center gap-2"
-					>
-					<FaEnvelope />visibility_theory@gmail.com
-				</a>
-				<a
-					href="mailto:alex.senger@hotmail.com"
-					aria-label="Correo"
-					className="hover:text-red-400 transition flex flex-row items-center gap-2"
-					>
-					<FaWhatsapp />+351 964193061
-				</a>
-			</div>
-		</div>
-	)
-}
+  return (
+    <div className="flex-col w-full lg:w-[45%]">
+      <h2 className="text-title">Visibility Theory</h2>
+      <p></p>
+      <h3 className="text-xl font-semibold mb-4">We’re here to help!</h3>
+      <p className="mb-6">
+        Feel free to reach out to us through any of these channels:
+      </p>
+      <div className="">
+        <a
+          href="https://www.instagram.com/alejandrosenger"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Instagram"
+          className="hover:text-secondary dark:hover:text-details transition flex flex-row items-center gap-2"
+        >
+          <FaInstagram />
+          instagram.com/visibility-theory
+        </a>
+        <a
+          href="mailto:alex.senger@hotmail.com"
+          aria-label="Correo"
+          className="hover:text-secondary dark:hover:text-details transition flex flex-row items-center gap-2"
+        >
+          <FaEnvelope />
+          visibility_theory@gmail.com
+        </a>
+        <p
+          href="mailto:alex.senger@hotmail.com"
+          aria-label="Correo"
+          className="hover:text-secondary dark:hover:text-details transition flex flex-row items-center gap-2"
+        >
+          <FaWhatsapp />
+          +351 964193061
+        </p>
+      </div>
+    </div>
+  );
+};
 
 export default Brand;

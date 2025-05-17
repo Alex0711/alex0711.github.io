@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 
-const PhoneNumberInput = ({ register }) => {
+const PhoneNumberInput = ({ register, setValue }) => {
   const [countries, setCountries] = useState([]);
   const [selectedCountry, setSelectedCountry] = useState(null);
   const [query, setQuery] = useState("");
@@ -26,6 +26,7 @@ const PhoneNumberInput = ({ register }) => {
         const argentina = filtered.find((country) => country.cca2 === "AR");
         if (argentina) {
           setSelectedCountry(argentina);
+          setValue("countryCode", argentina.code);
         }
       });
   }, []);
@@ -49,7 +50,9 @@ const PhoneNumberInput = ({ register }) => {
 
   return (
     <>
-      <label htmlFor="phone">Phone</label>
+      <label htmlFor="phone" className="font-bold">
+        Phone
+      </label>
       <div className="flex relative text-black" ref={dropdownRef}>
         {/* Country Selector Button */}
         <button
@@ -83,6 +86,7 @@ const PhoneNumberInput = ({ register }) => {
                   setSelectedCountry(country);
                   setDropdownOpen(false);
                   setQuery("");
+                  setValue("countryCode", country.code);
                 }}
               >
                 <img src={country.flag} alt="" className="h-4 w-4 mr-2" />
