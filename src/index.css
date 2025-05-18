@@ -3,29 +3,21 @@
 @tailwind utilities;
 
 :root {
-  --color-background: #ead3e4;
-  --color-primary: #3b2d74;
-  --color-white : #ffffff;
-  --color-secondary: #191332;
-  --color-details: #f5d60d;
-  --color-tertiary: #9f8bc2;
-  --color-quaternary: #3b2d74;
+  --color-background: #ffffff; /* background 1 */
+  --color-primary: #e0ecfc; /* text 1 */
+  --color-secondary: #98B4F1;
+  --color-details: #5263E3;
 }
 
 .dark {
   --color-background: #191332;
   --color-primary: #9f8bc2;
   --color-secondary: #ead3e4;
-  --color-tertiary: #473e57;
-  --color-quaternary: #3b2d74;
 }
 
 @layer components {
   .text-title {
     @apply text-[2.25rem] font-bold;
-  }
-  .text-slogan {
-    @apply text-[4rem] font-bold;
   }
   .text-subtitle {
     @apply text-[1.5rem] font-bold;
@@ -39,11 +31,11 @@
   section {
     @apply px-4 py-8 lg:px-8;
   }
-  body {
-    @apply bg-background text-white text-body font-jost font-medium;
+  body, html {
+    @apply bg-background text-black text-body font-jost font-medium;
   }
   input {
-    @apply flex-1 px-3 py-2 border-t border-b border-r border-gray-300 rounded-r mb-6;
+    @apply flex-1 px-3 py-2 border-t border-b border-r rounded mb-6;
   }
 }
 

@@ -1,3 +1,4 @@
+import React from "react";
 import { useEffect, useState, useRef } from "react";
 
 const PhoneNumberInput = ({ register, setValue }) => {
@@ -57,7 +58,7 @@ const PhoneNumberInput = ({ register, setValue }) => {
         {/* Country Selector Button */}
         <button
           type="button"
-          className="flex items-center gap-2 px-3 py-2 border border-gray-300 rounded-l bg-white hover:bg-gray-100 mb-6"
+          className="flex items-center gap-2 px-3 py-2 border rounded-l bg-white hover:bg-gray-100 mb-6"
           onClick={() => setDropdownOpen(!dropdownOpen)}
         >
           {selectedCountry && (
@@ -70,7 +71,7 @@ const PhoneNumberInput = ({ register, setValue }) => {
 
         {/* Dropdown */}
         {dropdownOpen && (
-          <div className="absolute z-10 mt-10 w-60 max-h-60 overflow-auto bg-white border border-gray-300 rounded shadow">
+          <div className="absolute z-10 mt-10 w-60 max-h-60 overflow-auto bg-white border rounded shadow">
             <input
               type="text"
               placeholder="Buscar país..."

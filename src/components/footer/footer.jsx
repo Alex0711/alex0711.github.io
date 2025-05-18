@@ -3,9 +3,11 @@ import ContactForm from "./contactForm";
 
 const Footer = () => {
   return (
-    <footer className="flex flex-col lg:flex-row justify-between px-4 py-8 lg:px-8 bg-background text-quaternary dark:text-primary">
-      <Brand />
-      <ContactForm />
+    <footer className="p-6">
+      <div className="flex flex-col lg:flex-row justify-between bg-primary p-6 rounded-2xl shadow-2xl">
+        <Brand />
+        <ContactForm />
+      </div>
     </footer>
   );
 };

@@ -100,7 +100,9 @@ const ContactForm = () => {
       {errors[""] && <ErrorMessaje message={errors[""].message} />}
 
       <div className="flex flex-col">
-        <label htmlFor="message">Do you have any question or idea?</label>
+        <label htmlFor="message" className="font-bold">
+          Do you have any question or idea?
+        </label>
         <textarea
           id="message"
           name="message"

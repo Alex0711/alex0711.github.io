@@ -9,11 +9,8 @@ module.exports = {
       colors: {
         background: 'var(--color-background)',
         primary: 'var(--color-primary)',
-        white: 'var(--color-white)',
         secondary: 'var(--color-secondary)',
         details: 'var(--color-details)',
-        tertiary: 'var(--color-tertiary)',
-        quaternary: 'var(--color-quaternary)',
       },
       fontFamily: {
         jost: ["Jost", "sans-serif"],

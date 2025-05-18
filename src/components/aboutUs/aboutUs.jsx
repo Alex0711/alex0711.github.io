@@ -2,6 +2,7 @@ import React from "react";
 import SlideInFromBotton from "components/aboutUs/slideInFromBotton";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import bgImage from "assets/images/personas_2.png";
 
 const AboutUs = () => {
   const ref = useRef(null);
@@ -12,10 +13,10 @@ const AboutUs = () => {
   });
   return (
     <section
-      className="flex flex-col lg:flex-row justify-between h-[200vh] lg:h-screen bg-cover bg-center flex-grow bg-quaternary"
+      className="flex flex-col lg:flex-row justify-between h-[200vh] lg:h-screen bg-cover bg-center flex-grow"
       // style={{ backgroundImage: `url(${bgImage})` }}
     >
-      <div className="h-1/2 lg:h-[100%] w-full lg:w-[45%] flex flex-col justify-between">
+      <div className="h-1/2 lg:h-[100%] w-full lg:w-[45%] flex flex-col shadow-2xl rounded-2xl p-6">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 50 }}
@@ -35,13 +36,16 @@ const AboutUs = () => {
             text="To merge creativity and functionality to help our clients stand out online and become the first choice for their customers."
           />
           <SlideInFromBotton
-            title={"Our Mission"}
+            title="Our Mission"
             text="To drive online growth for businesses, enabling them to reach and engage the customers who matter most."
           ></SlideInFromBotton>
         </div>
       </div>
-      <div className="h-1/2 lg:h-[100%] w-full lg:w-[45%]">
-        Insert image here
+      <div className="w-[100%] h-[100vh] lg:w-[50%] lg:h-[100%] shadow-2xl rounded-2xl mt-6 lg:mt-0">
+        <div
+          className="w-full h-full bg-cover bg-center rounded-2xl"
+          style={{ backgroundImage: `url(${bgImage})` }}
+        ></div>
       </div>
     </section>
   );

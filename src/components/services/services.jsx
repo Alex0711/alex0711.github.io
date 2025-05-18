@@ -24,13 +24,6 @@ const Services = () => {
       image: "web-development.jpg",
     },
     {
-      name: "Digital Marketing",
-      comment: "Strategic approaches",
-      description:
-        "Implementing strategic digital marketing tactics to enhance your online visibility and brand awareness.",
-      image: "web-development.jpg",
-    },
-    {
       name: "E-commerce Solutions",
       comment: "Online sales",
       description:
@@ -46,7 +39,7 @@ const Services = () => {
     },
   ];
   return (
-    <section className="min-h-screen bg-tertiary text-secondary dark:text-white">
+    <section className="min-h-screen bg-secondary">
       <h2 className="text-title text-center mb-12">Services</h2>
       <div className="flex flex-col lg:flex-row lg:justify-between lg:flex-wrap gap-y-8">
         {services.map((service) => (
