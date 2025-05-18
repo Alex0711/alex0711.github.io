@@ -1,7 +1,6 @@
 import TypingEffect from "common/typingEffect";
 import bgImage from "assets/images/laptop.jpeg";
 const Slogan = ({ headerHeight }) => {
-  console.log("headerHeight", headerHeight);
   return (
     <section
       className="h-screen flex w-full"
