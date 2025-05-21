@@ -17,7 +17,7 @@ const HomePage = () => {
   }, [headerRef]);
   return (
     <>
-      <Alert />
+      <Alert headerHeight={headerHeight} />
       <Header headerRef={headerRef} />
       <Slogan headerHeight={headerHeight} />
       <Services />

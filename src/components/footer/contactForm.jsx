@@ -64,7 +64,7 @@ const ContactForm = () => {
         setEnableButton(true);
         setCurrentAlert({
           message:
-            "Oops, something went wrong. Try again in a bit or drop us a message — we're here to help!",
+            "Oops! Something went wrong. Try again later or reach us on Instagram or WhatsApp.",
           type: "error",
         });
       });
