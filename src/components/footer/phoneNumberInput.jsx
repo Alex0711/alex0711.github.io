@@ -1,6 +1,7 @@
+import React from "react";
 import { useEffect, useState, useRef } from "react";
 
-const PhoneNumberInput = ({ register }) => {
+const PhoneNumberInput = ({ register, setValue }) => {
   const [countries, setCountries] = useState([]);
   const [selectedCountry, setSelectedCountry] = useState(null);
   const [query, setQuery] = useState("");
@@ -21,14 +22,14 @@ const PhoneNumberInput = ({ register }) => {
           }))
           .sort((a, b) => a.name.localeCompare(b.name));
         setCountries(filtered);
-		
+
         // Set default country to Argentina
         const argentina = filtered.find((country) => country.cca2 === "AR");
         if (argentina) {
           setSelectedCountry(argentina);
+          setValue("countryCode", argentina.code);
         }
       });
-
   }, []);
 
   useEffect(() => {
@@ -50,12 +51,14 @@ const PhoneNumberInput = ({ register }) => {
 
   return (
     <>
-      <label htmlFor="phone" >Phone</label>
-      <div className="flex relative" ref={dropdownRef}>
+      <label htmlFor="phone" className="font-bold">
+        Phone
+      </label>
+      <div className="flex relative text-black" ref={dropdownRef}>
         {/* Country Selector Button */}
         <button
           type="button"
-          className="flex items-center gap-2 px-3 py-2 border border-gray-300 rounded-l bg-white hover:bg-gray-100 mb-6"
+          className="flex items-center gap-2 px-3 py-2 border rounded-l bg-white hover:bg-gray-100 mb-6"
           onClick={() => setDropdownOpen(!dropdownOpen)}
         >
           {selectedCountry && (
@@ -68,7 +71,7 @@ const PhoneNumberInput = ({ register }) => {
 
         {/* Dropdown */}
         {dropdownOpen && (
-          <div className="absolute z-10 mt-10 w-60 max-h-60 overflow-auto bg-white border border-gray-300 rounded shadow">
+          <div className="absolute z-10 mt-10 w-60 max-h-60 overflow-auto bg-white border rounded shadow">
             <input
               type="text"
               placeholder="Buscar país..."
@@ -84,6 +87,7 @@ const PhoneNumberInput = ({ register }) => {
                   setSelectedCountry(country);
                   setDropdownOpen(false);
                   setQuery("");
+                  setValue("countryCode", country.code);
                 }}
               >
                 <img src={country.flag} alt="" className="h-4 w-4 mr-2" />
@@ -99,8 +103,8 @@ const PhoneNumberInput = ({ register }) => {
           className="input-no-spinner"
           placeholder="123456789"
           id="phone"
-		  name="phone"
-		  {...register("phone")}
+          name="phone"
+          {...register("phone")}
         />
       </div>
     </>
