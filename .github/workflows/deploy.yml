@@ -65,6 +65,9 @@ jobs:
       - name: Enable debug logging
         run: echo "ACTIONS_STEP_DEBUG=true" >> $GITHUB_ENV
 
+      - name: Verify AWS identity
+        run: aws sts get-caller-identity
+
       - name: Deploy to S3
         uses: aws-actions/configure-aws-credentials@v2
         with:
