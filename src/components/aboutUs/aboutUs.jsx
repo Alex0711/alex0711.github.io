@@ -16,7 +16,7 @@ const AboutUs = () => {
       className="flex flex-col lg:flex-row justify-between h-[200vh] lg:h-screen bg-cover bg-center flex-grow"
       // style={{ backgroundImage: `url(${bgImage})` }}
     >
-      <div className="h-1/2 lg:h-[100%] w-full lg:w-[45%] flex flex-col shadow-2xl rounded-2xl p-6">
+      <div className="h-1/2 lg:h-[100%] w-full lg:w-[45%] flex flex-col custom-shadow rounded-2xl p-6 zoom-hover">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 50 }}
@@ -41,7 +41,7 @@ const AboutUs = () => {
           ></SlideInFromBotton>
         </div>
       </div>
-      <div className="w-[100%] h-[100vh] lg:w-[50%] lg:h-[100%] shadow-2xl rounded-2xl mt-6 lg:mt-0">
+      <div className="w-[100%] h-[100vh] lg:w-[50%] lg:h-[100%] custom-shadow rounded-2xl mt-6 lg:mt-0 zoom-hover">
         <div
           className="w-full h-full bg-cover bg-center rounded-2xl"
           style={{ backgroundImage: `url(${bgImage})` }}

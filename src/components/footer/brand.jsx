@@ -27,14 +27,15 @@ const Brand = () => {
           <FaEnvelope />
           visibility_theory@gmail.com
         </a>
-        <p
-          href="mailto:alex.senger@hotmail.com"
-          aria-label="Correo"
+        <a
+          href="https://wa.me/351964193061"
+          target="_blank"
+          rel="noopener noreferrer"
           className="hover:text-details dark:hover:text-details transition flex flex-row items-center gap-2"
         >
           <FaWhatsapp />
           +351 964193061
-        </p>
+        </a>
       </div>
     </div>
   );
