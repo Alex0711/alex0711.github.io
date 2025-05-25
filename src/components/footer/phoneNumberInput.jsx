@@ -1,35 +1,33 @@
 import React from "react";
 import { useEffect, useState, useRef } from "react";
+import countries from "components/footer/countries.json";
 
 const PhoneNumberInput = ({ register, setValue }) => {
-  const [countries, setCountries] = useState([]);
+  // const [countries, setCountries] = useState(countries);
   const [selectedCountry, setSelectedCountry] = useState(null);
   const [query, setQuery] = useState("");
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dropdownRef = useRef();
 
   useEffect(() => {
-    fetch("https://restcountries.com/v3.1/all?fields=name,idd,cca2,flags")
-      .then((res) => res.json())
-      .then((data) => {
-        const filtered = data
-          .filter((country) => country.idd?.root)
-          .map((country) => ({
-            name: country.name.common,
-            code: `${country.idd.root}${country.idd.suffixes?.[0] || ""}`,
-            flag: country.flags.svg,
-            cca2: country.cca2,
-          }))
-          .sort((a, b) => a.name.localeCompare(b.name));
-        setCountries(filtered);
+    const getCountryFromLanguage = () => {
+      let countryCode = "AR"; // Default to Argentina
+      try {
+        const language = navigator.language || navigator.languages[0];
+        countryCode = language.split("-")[1];
+      } catch (error) {
+        console.error("Error getting country code from language:", error);
+      }
+      const userCountry = countries.find(
+        (c) => c.cca2 === countryCode.toUpperCase()
+      );
+      if (userCountry) {
+        setSelectedCountry(userCountry);
+        setValue("countryCode", userCountry.code);
+      }
+    };
 
-        // Set default country to Argentina
-        const argentina = filtered.find((country) => country.cca2 === "AR");
-        if (argentina) {
-          setSelectedCountry(argentina);
-          setValue("countryCode", argentina.code);
-        }
-      });
+    getCountryFromLanguage();
   }, []);
 
   useEffect(() => {
@@ -71,7 +69,7 @@ const PhoneNumberInput = ({ register, setValue }) => {
 
         {/* Dropdown */}
         {dropdownOpen && (
-          <div className="absolute z-10 mt-10 w-60 max-h-60 overflow-auto bg-white border rounded shadow">
+          <div className="absolute z-10 mt-10 w-60 max-h-60 overflow-auto bg-white border rounded custom-shadow">
             <input
               type="text"
               placeholder="Buscar país..."

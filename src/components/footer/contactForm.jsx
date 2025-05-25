@@ -20,7 +20,7 @@ const schema = yup
     return !!value.phone || !!value.email;
   });
 
-const ContactForm = () => {
+const ContactForm = ({ lineRef }) => {
   const sheetUrl = process.env.REACT_APP_SHEET_URL;
   const [enableButton, setEnableButton] = useState(true);
   const { setCurrentAlert } = useAlert();
@@ -71,6 +71,7 @@ const ContactForm = () => {
   };
   return (
     <form
+      ref={lineRef}
       onSubmit={handleSubmit(onSubmit)}
       className="relative w-full lg:w-[45%]"
     >

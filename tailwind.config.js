@@ -11,6 +11,7 @@ module.exports = {
         primary: 'var(--color-primary)',
         secondary: 'var(--color-secondary)',
         details: 'var(--color-details)',
+        text: 'var(--color-text)',
       },
       fontFamily: {
         jost: ["Jost", "sans-serif"],

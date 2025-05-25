@@ -4,7 +4,10 @@ import { SunIcon, MoonIcon } from "@heroicons/react/24/solid";
 import { vh } from "framer-motion";
 
 const Header = ({ headerRef }) => {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(() => {
+    const storedTheme = localStorage.getItem("theme");
+    return storedTheme === "dark";
+  });
   const [primary, setPrimary] = useState(true);
 
   useEffect(() => {
@@ -30,11 +33,11 @@ const Header = ({ headerRef }) => {
   return (
     <header
       ref={headerRef}
-      className={`fixed top-0 left-0 w-full flex justify-between px-4 transition-colors duration-300 z-20 ${
-        primary ? "bg-primary" : "bg-white"
+      className={`fixed top-0 left-0 w-full flex justify-between px-4 z-20 ${
+        primary ? "bg-details dark:bg-primary" : "bg-details dark:bg-background"
       }`}
     >
-      <h1 className="text-title">Visibility Theory</h1>
+      <h1 className="text-title text-background dark:text-details">BastBit</h1>
       <button
         onClick={() => setDarkMode(!darkMode)}
         className="top-4 right-4 rounded-full"
@@ -43,7 +46,7 @@ const Header = ({ headerRef }) => {
         {darkMode ? (
           <SunIcon className="h-6 w-6 text-yellow-400" />
         ) : (
-          <MoonIcon className="h-6 w-6 text-gray-800" />
+          <MoonIcon className="h-6 w-6 text-background" />
         )}
       </button>
     </header>

@@ -6,13 +6,16 @@
   --color-background: #ffffff; /* background 1 */
   --color-primary: #e0ecfc; /* text 1 */
   --color-secondary: #98B4F1;
-  --color-details: #5263E3;
+  --color-details: #39095d;
+  --color-text: #000000;
 }
 
 .dark {
-  --color-background: #191332;
-  --color-primary: #9f8bc2;
-  --color-secondary: #ead3e4;
+  --color-background: #0B192C;
+  --color-primary: #1E3E62;
+  --color-secondary:  #000000;
+  --color-text: #f2f2f2;
+  --color-details: #FF6500;
 }
 
 @layer components {
@@ -32,7 +35,7 @@
     @apply px-4 py-8 lg:px-8;
   }
   body, html {
-    @apply bg-background text-black text-body font-jost font-medium;
+    @apply bg-background text-text text-body font-jost font-medium transition-colors duration-300;
   }
   input {
     @apply flex-1 px-3 py-2 border-t border-b border-r rounded mb-6;
@@ -48,3 +51,11 @@
   -moz-appearance: textfield;
 }
 
+.zoom-hover {
+  @apply transform transition-transform duration-300 hover:scale-105;
+}
+
+.custom-shadow {
+  @apply shadow-2xl;
+  /* box-shadow: 0 12px 25px -12px var(--color-text); */
+}
