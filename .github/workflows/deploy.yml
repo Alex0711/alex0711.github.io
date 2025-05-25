@@ -3,7 +3,8 @@ name: Deploy Portfolio
 on:
   push:
     branches:
-      - staging # o la rama que elijas como base
+      - staging
+      - master
 
 jobs:
   deploy-staging:
