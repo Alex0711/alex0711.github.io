@@ -9,7 +9,7 @@ const Brand = () => {
         Feel free to reach out to us through any of these channels:
       </p>
       <div className="">
-        <a
+        {/* <a
           href="https://www.instagram.com/alejandrosenger"
           target="_blank"
           rel="noopener noreferrer"
@@ -18,23 +18,24 @@ const Brand = () => {
         >
           <FaInstagram />
           instagram.com/visibility-theory
-        </a>
+        </a> */}
         <a
-          href="mailto:alex.senger@hotmail.com"
-          aria-label="Correo"
+          href="mailto:bastbit25@gmail.com"
+          aria-label="Email"
           className="hover:text-details dark:hover:text-details transition flex flex-row items-center gap-2"
         >
           <FaEnvelope />
-          visibility_theory@gmail.com
+          bastbit25@gmail.com
         </a>
-        <p
-          href="mailto:alex.senger@hotmail.com"
-          aria-label="Correo"
+        <a
+          href="https://wa.me/351964193061"
+          target="_blank"
+          rel="noopener noreferrer"
           className="hover:text-details dark:hover:text-details transition flex flex-row items-center gap-2"
         >
           <FaWhatsapp />
           +351 964193061
-        </p>
+        </a>
       </div>
     </div>
   );
