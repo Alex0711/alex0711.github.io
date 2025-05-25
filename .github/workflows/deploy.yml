@@ -39,6 +39,11 @@ jobs:
     if: github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
     environment: production
+
+    permissions:
+      id-token: write
+      contents: read
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -62,17 +67,14 @@ jobs:
           CI: false
           REACT_APP_SHEET_URL: ${{ vars.REACT_APP_SHEET_URL }}
 
-      - name: Enable debug logging
-        run: echo "ACTIONS_STEP_DEBUG=true" >> $GITHUB_ENV
-
-      - name: Verify AWS identity
-        run: aws sts get-caller-identity
-
-      - name: Deploy to S3
+      - name: Configure AWS credentials via OIDC
         uses: aws-actions/configure-aws-credentials@v2
         with:
           role-to-assume: arn:aws:iam::${{ vars.AWS_ACCOUNT_ID }}:role/${{ vars.AWS_ROLE }}
           aws-region: ${{ vars.AWS_REGION }}
+
+      - name: Verify AWS identity
+        run: aws sts get-caller-identity
 
       - name: Sync to S3 bucket
         run: aws s3 sync ./build s3://${{ vars.AWS_BUCKET_NAME }} --delete
