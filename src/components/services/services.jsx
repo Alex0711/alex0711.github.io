@@ -16,13 +16,13 @@ const Services = () => {
         "Our creative design approach focuses on tailor-made solutions that align with your brand and objetives.",
       image: "web-development.jpg",
     },
-    {
-      name: "SEO Strategies",
-      comment: "Visibility boost",
-      description:
-        "Strategies to improve your website's search engine ranking and attract more organic traffic.",
-      image: "web-development.jpg",
-    },
+    // {
+    //   name: "SEO Strategies",
+    //   comment: "Visibility boost",
+    //   description:
+    //     "Strategies to improve your website's search engine ranking and attract more organic traffic.",
+    //   image: "web-development.jpg",
+    // },
     {
       name: "E-commerce Solutions",
       comment: "Online sales",
