@@ -50,7 +50,7 @@ const PhoneNumberInput = ({ register, setValue }) => {
   return (
     <>
       <label htmlFor="phone" className="font-bold">
-        Phone
+        WhatsApp
       </label>
       <div className="flex relative text-black" ref={dropdownRef}>
         {/* Country Selector Button */}
